@@ -16,19 +16,18 @@ input.addEventListener("input", handleChange);
 
 function handleChange(e) { 
   amount = e.target.value
-  console.log("amount", amount);
 };
 
 function destroyBoxes() { 
   container.innerHTML = '';
+  input.value= '';
 };
 
 function createBoxes(amount) {
-  console.log("amount", amount);
   let box = '';
   for (let index = 0; index < amount; index++) {
-    const width = index * 10;
-    box += <div style="width: ${width}px; height: ${width}px; background-color: ${getRandomHexColor()} "></div>
+    const width = 30 + index * 10;
+    box += `<div style="width: ${width}px; height: ${width}px; background-color: ${getRandomHexColor()} "></div>`
   }
 
   container.innerHTML = box;
